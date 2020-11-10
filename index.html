@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)file:///C:/Users/Pi/Downloads/ak04u-1.html -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AK04U</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="top-form">
+        <form id="insert-new">
+            Tipo: <select id="form-tipo" class="dropdown">
+                <option disabled="true">Di merito</option>
+                <option value="C04">C04 Civile fino a 51.700</option>
+                <option value="C05">C05 Civile da 51.700 a 516.500</option>
+                <option value="C06">C06 Civile oltre 516.500</option>
+                <option value="C07">C07 Amministrativa</option>
+                <option value="C08">C08 Penale</option>
+                <option disabled="true">Superiori</option>
+                <option value="C09">C09 Civile</option>
+                <option value="C10">C10 Penale</option>
+                <option value="C11">C11 Consul. legale e assist. stragiudiziale fino 5.200</option>
+                <option value="C12">C12 Consul. legale e assist. stragiudiziale da 5.200 a 51.700</option>
+                <option value="C13">C13 Consul. legale e assist. stragiudiziale oltre 51.700</option>
+                <option value="C14">C14 Stabili collaborazioni con studi e/o strutture di terzi</option>
+                <option value="C15">C15 Partecipazione a consigli di amministrazione, collegi sindacali...</option>
+                <option value="C16">C16 Partecipazione a collegi arbitrali/arbitro unico</option>
+                <option value="C17">C17 Conciliazione</option>
+                <option value="C18">C18 Attività di semplice domiciliazione</option>
+                <option value="C19">C19 Stesura di lettere di diffida</option>
+                <option value="C20">C20 Altre attività</option>
+            </select>
+            Nome: <input type="text" placeholder="Fattura 1" id="form-nome">
+            Onorario: <input type="text" id="onorario">
+            Parziale: <input type="checkbox" id="parziale-check" name="parziale-checkbox">
+            <button type="submit">AGGIUNGI</button>
+            <button type="button" id="riepilogo-btn" class="top-right-btn">RIEPILOGO</button>
+        </form>
+    </div>
+
+
+
+    <table id="stat-table">
+        <thead>
+            <tr>
+                <th>
+                    Tipo
+                </th>
+                <th>
+                    Numero
+                </th>
+                <th>
+                    Valore totale
+                </th>
+                <th>
+                    Percentuale
+                </th>
+            </tr>
+        </thead>
+        <tbody id="stat-table-body">
+            <tr id="stat-parziali">
+                <td>
+                    <h3>Fatture parziali</h3>
+                </td>
+                <td id="numero-parziali">0</td>
+                <td id="valore-parziali">0</td>
+                <td id="percentuale-parziali">0%</td>
+            </tr>
+            <tr id="stat-totale">
+                <td>
+                    <h3>Totale</h3>
+                </td>
+                <td class="numero">
+                    0
+                </td>
+                <td class="valore">
+                    0
+                </td>
+                <td>
+                    <button id="salva-btn">ESPORTA</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <br><br>
+
+    <div id="salva-modal" class="modal">
+        <div id="data-div" class="modal-content">
+            <span class="close">×</span>
+            <h1><b>Salva</b></h1>
+            <button id="modal-salva-btn">
+                <h1>Salva</h1>
+                Clicca qui per salvare il tuo lavoro e riprenderlo in seguito.
+            </button>
+            <button id="modal-esporta-btn">
+                <h1>Esporta</h1>
+                Clicca qui per esportare la tabella in PDF.
+            </button>
+        </div>
+    </div>
+
+    <div id="riepilogo-modal" class="modal">
+        <div id="data-div" class="modal-content">
+            <span class="close">×</span>
+            <h1><b>Prestazioni aggiunte</b></h1>
+            Ordina per: <select id="data-sort" class="dropdown">
+                <option value="inserimento" selected="selected">Inserimento</option>
+                <option value="nome">Nome</option>
+                <option value="tipo">Tipo</option>
+                <option value="onorario">Onorario</option>
+                <option value="parziali">Parziali</option>
+            </select>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Tipo
+                        </th>
+                        <th>
+                            Nome
+                        </th>
+                        <th>
+                            Onorario
+                        </th>
+                        <th>
+                            Parziale
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="data-table">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <script src="jquery.js"></script>
+    <script src="data.js"></script>
+    <script src="data-table.js"></script>
+    <script src="stats-table.js"></script>
+    <script src="callbacks.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
