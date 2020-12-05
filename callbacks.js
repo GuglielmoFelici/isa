@@ -13,9 +13,8 @@ $("form").submit(function (_) {
         alert("Inserire un onorario numerico maggiore di 0, usando il punto per le cifre decimali");
         return false;
     }
-    prestazioneSequence++;
     prestazioni.push({
-        id: prestazioneSequence,
+        id: ++prestazioneSequence,
         tipo: {
             codice: $("#form-tipo").val(),
             descrizione: $(`#form-tipo [value=${$("#form-tipo").val()}]`).text()

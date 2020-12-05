@@ -1,7 +1,7 @@
-sortById = (p1, p2) => p1.id > p2.id
-sortByName = (p1, p2) => p1.nome.toLowerCase() > p2.nome.toLowerCase()
-sortByOnorario = (p1, p2) => p1.onorario > p2.onorario
-sortByTipo = (p1, p2) => p1.tipo.codice > p2.tipo.codice
+sortById = (p1, p2) => p1.id - p2.id
+sortByName = (p1, p2) => p1.nome.toLowerCase().localeCompare(p2.nome.toLowerCase())
+sortByOnorario = (p1, p2) => p1.onorario - p2.onorario
+sortByTipo = (p1, p2) => p1.tipo.codice.toLowerCase().localeCompare(p2.tipo.codice.toLowerCase())
 sortByParziale = (p1, p2) => !p1.isParziale
 
 $('#data-sort').change((_) => updateData())
